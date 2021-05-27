@@ -1,3 +1,64 @@
-<div class="w-full h-screen flex justify-center items-center">
-  <h1 class="text-5xl text-blue-600 text-bold">Hello Tailwind CSS</h1>
+
+<nav class="flex bg-white flex-wrap items-center justify-between p-4">
+  <div class="lg:order-2 w-auto lg:w-1/5 lg:text-center">
+      <a class="text-xl text-gray-800 font-semibold font-heading" href="#">
+          Meal Shuffler
+      </a>
+  </div>
+  <div class="block lg:hidden">
+      <button class="navbar-burger flex items-center py-2 px-3 text-indigo-500 rounded border border-indigo-500">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>
+                  Menu
+              </title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z">
+              </path>
+          </svg>
+      </button>
+  </div>
+  <div class="navbar-menu hidden lg:order-1 lg:block w-full lg:w-2/5">
+      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
+          Home
+      </a>
+      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
+          Team
+      </a>
+      <a class="block lg:inline-block mt-4 lg:mt-0 text-blue-900 hover:text-indigo-600" href="#">
+          Galery
+      </a>
+  </div>
+  <div class="navbar-menu hidden lg:order-3 lg:block w-full lg:w-2/5 lg:text-right">
+      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
+          Content
+      </a>
+      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
+          FAQ
+      </a>
+      <a class="block lg:inline-block mt-4 lg:mt-0 text-blue-900 hover:text-indigo-600" href="#">
+          Contact
+      </a>
+  </div>
+</nav>
+
+<div class="bg-white dark:bg-gray-800 ">
+  <div class="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+      <h2 class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
+          <span class="block">
+              Meal Shuffler
+          </span>
+          <span class="block text-indigo-500">
+              Coming Soon
+          </span>
+      </h2>
+      <p class="text-xl mt-4 max-w-md mx-auto text-gray-400">
+
+      </p>
+      <!-- <div class="lg:mt-0 lg:flex-shrink-0">
+          <div class="mt-12 inline-flex rounded-md shadow">
+              <button type="button" class="py-4 px-6  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                  Get started
+              </button>
+          </div>
+      </div> -->
+  </div>
 </div>
