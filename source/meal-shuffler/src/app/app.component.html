@@ -1,64 +1,41 @@
+<header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2" >
+  <div class="flex-1 flex justify-between items-center">
+    <a href="#">
+      <img src="https://picsum.photos/200" width="32" height="36">
+    </a>
+  </div>
 
-<nav class="flex bg-white flex-wrap items-center justify-between p-4">
-  <div class="lg:order-2 w-auto lg:w-1/5 lg:text-center">
-      <a class="text-xl text-gray-800 font-semibold font-heading" href="#">
-          Meal Shuffler
-      </a>
-  </div>
-  <div class="block lg:hidden">
-      <button class="navbar-burger flex items-center py-2 px-3 text-indigo-500 rounded border border-indigo-500">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>
-                  Menu
-              </title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z">
-              </path>
-          </svg>
-      </button>
-  </div>
-  <div class="navbar-menu hidden lg:order-1 lg:block w-full lg:w-2/5">
-      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
-          Home
-      </a>
-      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
-          Team
-      </a>
-      <a class="block lg:inline-block mt-4 lg:mt-0 text-blue-900 hover:text-indigo-600" href="#">
-          Galery
-      </a>
-  </div>
-  <div class="navbar-menu hidden lg:order-3 lg:block w-full lg:w-2/5 lg:text-right">
-      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
-          Content
-      </a>
-      <a class="block lg:inline-block mt-4 lg:mt-0 mr-10 text-blue-900 hover:text-indigo-600" href="#">
-          FAQ
-      </a>
-      <a class="block lg:inline-block mt-4 lg:mt-0 text-blue-900 hover:text-indigo-600" href="#">
-          Contact
-      </a>
-  </div>
-</nav>
+  <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900"
+      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+      <title>menu</title>
+      <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+    </svg></label>
+  <input class="hidden" type="checkbox" id="menu-toggle" />
 
-<div class="bg-white dark:bg-gray-800 ">
-  <div class="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
-      <h2 class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
-          <span class="block">
-              Meal Shuffler
-          </span>
-          <span class="block text-indigo-500">
-              Coming Soon
-          </span>
-      </h2>
-      <p class="text-xl mt-4 max-w-md mx-auto text-gray-400">
+  <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+    <nav>
+      <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
+        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+            routerLink="home">Home</a></li>
+         <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" routerLink="meals">Meals</a>
+        </li>
+        <!--<li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+            href="#">Documentation</a></li>
+        <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
+            href="#">Support</a></li> -->
+      </ul>
+    </nav>
+    <!-- <a href="#" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor">
+    <img class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400" src="https://pbs.twimg.com/profile_images/1128143121475342337/e8tkhRaz_normal.jpg" alt="Andy Leverenz">
+  </a> -->
 
-      </p>
-      <!-- <div class="lg:mt-0 lg:flex-shrink-0">
-          <div class="mt-12 inline-flex rounded-md shadow">
-              <button type="button" class="py-4 px-6  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                  Get started
-              </button>
-          </div>
-      </div> -->
   </div>
+
+</header>
+
+<div class="px-4">
+  <router-outlet></router-outlet>
 </div>
+
+<!-- background image  -->
+<!-- style="background-image: linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)),url(https://musicapp.bleext.com/storage/users/14/posts/69/php7CGTMq.jpg)" -->
