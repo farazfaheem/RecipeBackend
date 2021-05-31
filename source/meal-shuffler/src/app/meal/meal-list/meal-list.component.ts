@@ -1,4 +1,6 @@
+import { Meal } from './../../modals/meal';
 import { Component, OnInit } from '@angular/core';
+import { MealService } from 'src/app/services/meal-service.service';
 
 @Component({
   selector: 'app-meal-list',
@@ -7,48 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MealListComponent implements OnInit {
 
-  meals: any[] = [
-    {
-      "name": "Biryani",
-      "cookingTime":"60 minutes"
-    },
-    {
-      "name": "Karhai",
-      "cookingTime":"45 minutes"
-    },
-    {
-      "name": "Paye",
-      "cookingTime":"80 minutes"
-    },
-    {
-      "name": "Mong daal",
-      "cookingTime":"60 minutes"
-    },
-    {
-      "name": "Nihari",
-      "cookingTime":"60 minutes"
-    },
-    {
-      "name": "Haleem",
-      "cookingTime":"60 minutes"
-    },
-    {
-      "name": "Mutton Korma",
-      "cookingTime":"60 minutes"
-    },
-    {
-      "name": "Tandoori chicken",
-      "cookingTime":"60 minutes"
-    },
-    {
-      "name": "Alo Gosht",
-      "cookingTime":"60 minutes"
-    },
-
-  ];
-  constructor() { }
+  meals:Meal[] = [];
+  constructor(private mealService: MealService) { }
 
   ngOnInit(): void {
+    this.getMeals();
+  }
+
+  getMeals(): void {
+    this.mealService.getRandomMeals()
+        .subscribe(meals => this.meals = meals);
   }
 
 }

@@ -1,3 +1,11 @@
 #menu-toggle:checked + #menu {
   display: block;
 }
+main {
+  flex: 1; /* Or flex-grow: 1;*/
+}
+.app-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
