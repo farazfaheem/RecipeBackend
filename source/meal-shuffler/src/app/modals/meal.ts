@@ -1,8 +1,6 @@
-export interface Meal {
-  id: number;
+export interface IMeal {
+  id?: string;
   name: string;
-  url:string;
-  description:string;
-  cookingtime:number
+  isshared:boolean;
 }
 

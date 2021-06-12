@@ -1,0 +1,13 @@
+<div class="container mx-auto">
+    <div class="flex space-x-2">
+      <input type="text"  placeholder="Add a meal" #newMeal (blur)="addMeal(newMeal.value); newMeal.value=''" (keyup.enter)="addMeal(newMeal.value)"
+
+        class="flex-grow ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none bg-gray-100 focus:bg-white">
+      <button type="submit" (click)="addMeal(newMeal.value)"
+        class="bg-indigo-500 flex-none rounded hover:bg-indigo-600 p-2 text-white font-bold ring-2 ring-indigo-200">Add</button>
+    </div>
+  <div class="bg-white p-2 my-2 rounded-md ring-1 ring-indigo-200 outline-none hover:bg-indigo-200"
+    *ngFor="let meal of meals">
+    <p class="text-gray-700">{{meal.name}}</p>
+  </div>
+</div>

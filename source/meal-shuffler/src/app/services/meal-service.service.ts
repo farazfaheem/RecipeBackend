@@ -1,26 +1,41 @@
+import { IMeal } from './../modals/meal';
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
-import { MEALS } from '../mock/mock-meals';
-import { Meal } from '../modals/meal';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MealService {
 
-  constructor() { }
-  getMasterMeals(): Observable<Meal[]> {
-    const masterMeals = of(MEALS);
-    return masterMeals;
+  constructor(private firestore: AngularFirestore) { }
+
+
+  getMasterMeals() {
+    return this.firestore.collection('master-meals').snapshotChanges();
   }
 
-  getRandomMeals() : Observable<Meal[]>{
+  addMasterMeal(payload: IMeal) {
+    return this.firestore.collection('master-meals').add(payload);
+  }
 
-    const randomSampling = of(this.selectKItems(MEALS,MEALS.length,5))
+  updateMasterMeal(mealId: string, payload: IMeal) {
+    return this.firestore.doc('master-meals/' + mealId).update(payload);
+  }
+
+  deleteMasterMeal(mealId: string) {
+    return this.firestore.doc('master-meals/' + mealId).delete();
+  }
+
+  getRandomMeals(meals:IMeal[], k: number) : IMeal[]{
+    if(meals.length < k){
+      k = meals.length;
+    }
+    const randomSampling = this.selectKItems(meals,meals.length,k)
     return randomSampling;
   }
 
-   selectKItems(stream:Meal[], n:number, k:number) : Meal[]
+   selectKItems(stream:IMeal[], n:number, k:number) : IMeal[]
   {
 
     // Index for elements in stream[]
